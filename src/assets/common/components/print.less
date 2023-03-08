@@ -1,0 +1,107 @@
+.sh-print-popup {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 46px;
+        padding: 0 16px 0 20px;
+        font-size: var(--sh-wms-title-font-size);
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    &__copies {
+        .ivu-input-group-prepend {
+            padding: 0;
+        }
+
+        .ivu-input-group-append {
+            padding: 0;
+        }
+
+        &--btn {
+            padding: 8px 14px;
+            cursor: pointer;
+        }
+
+        input {
+            text-align: center;
+        }
+    }
+
+    &__preview {
+        max-height: 50vh;
+        overflow: auto;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+// 保证预览与打印一致
+.sh-print-popup .sh-print-popup__preview {
+    body,
+    ol,
+    ul,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    th,
+    td,
+    dl,
+    dd,
+    form,
+    fieldset,
+    legend,
+    input,
+    textarea,
+    select {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        font: 12px "宋体", "Arial Narrow", HELVETICA;
+        background: #fff;
+        text-size-adjust: 100%;
+    }
+
+    a {
+        color: #2d374b;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #cd0200;
+        text-decoration: underline;
+    }
+
+    em {
+        font-style: normal;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    img {
+        vertical-align: middle;
+        border: 0;
+    }
+
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+
+    p {
+        word-wrap: break-word;
+    }
+}

@@ -1,0 +1,244 @@
+@input-prefix-cls: ~"@{css-prefix}input";
+
+.@{input-prefix-cls} {
+  .input;
+
+  &-wrapper{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    // #2149 & #2219
+    line-height: normal;
+    vertical-align: middle;
+  }
+
+  &-icon {
+    position: absolute;
+    right: 0;
+    z-index: 3;
+    width: 32px;
+    height: @input-height-base;
+    font-size: 16px;
+    line-height: @input-height-base;
+    color: @subsidiary-color;
+    text-align: center;
+  }
+
+  &-hide-icon &-icon{
+    display: none;
+  }
+
+  &-icon-validate{
+    display: none;
+  }
+
+  &-icon-clear{
+    display: none;
+  }
+
+  &-wrapper:hover{
+    .@{input-prefix-cls}-icon-clear{
+      display: inline-block;
+    }
+  }
+
+  &-icon-normal + &{
+    padding-right: 32px;
+  }
+  // #554
+  &-hide-icon &-icon-normal + &{
+    padding-right: @input-padding-horizontal;
+  }
+
+  &-wrapper-large &-icon{
+    height: @input-height-large;
+    font-size: 18px;
+    line-height: @input-height-large;
+  }
+
+  &-wrapper-small &-icon{
+    width: 24px;
+    height: @input-height-small;
+    font-size: 14px;
+    line-height: @input-height-small;
+
+    //+ .@{input-prefix-cls} {
+    //    padding-right: 24px;
+    //}
+  }
+
+  // prefix & suffix
+  &-prefix, &-suffix{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 32px;
+    height: 100%;
+    text-align: center;
+
+    i{
+      font-size: 16px;
+      line-height: @input-height-base;
+      color: @subsidiary-color;
+    }
+  }
+
+  &-suffix{
+    right: 0;
+    left: auto;
+  }
+
+  &-wrapper-small &-prefix, &-wrapper-small &-suffix{
+    i{
+      font-size: 14px;
+      line-height: @input-height-small;
+    }
+  }
+
+  &-wrapper-large &-prefix, &-wrapper-large &-suffix{
+    i{
+      font-size: 18px;
+      line-height: @input-height-large;
+    }
+  }
+
+  &-with-prefix{
+    padding-left: 32px;
+  }
+
+  &-with-suffix{
+    padding-right: 32px;
+  }
+
+  // search
+  &-search{
+    position: relative;
+    z-index: 2;
+    padding: 0 16px !important;
+    color: #fff !important;
+    cursor: pointer;
+    background: @primary-color !important;
+    border-color: @primary-color !important;
+    transition: all @transition-time @ease-in-out;
+
+    i{
+      font-size: 16px;
+    }
+
+    &:hover{
+      background: tint(@primary-color, 20%) !important;
+      border-color: tint(@primary-color, 20%) !important;
+    }
+
+    &:active{
+      background: shade(@primary-color, 5%) !important;
+      border-color: shade(@primary-color, 5%) !important;
+    }
+
+    &-icon{
+      cursor: pointer;
+      transition: color @transition-time @ease-in-out;
+
+      &:hover{
+        color: inherit;
+      }
+    }
+
+    &::before{
+      position: absolute;
+      top: -1px;
+      bottom: -1px;
+      left: -1px;
+      display: block;
+      width: 1px;
+      content: '';
+      background: inherit;
+    }
+  }
+
+  &-wrapper-small &-search{
+    padding: 0 12px !important;
+
+    i{
+      font-size: 14px;
+    }
+  }
+
+  &-wrapper-large &-search{
+    padding: 0 20px !important;
+
+    i{
+      font-size: 18px;
+    }
+  }
+
+  &-with-search{
+    &:hover{
+      .@{input-prefix-cls} {
+        border-color: tint(@primary-color, 20%);
+      }
+    }
+  }
+
+  &-word-count{
+    position: absolute;
+    top: 2px;
+    right: @input-padding-horizontal;
+    bottom: 2px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    padding-left: @input-padding-horizontal;
+    font-size: @font-size-small;
+    color: @subsidiary-color;
+    text-align: center;
+    background: #fff;
+  }
+
+  &-wrapper-disabled &-word-count{
+    background: @input-disabled-bg;
+  }
+
+  &-type-textarea &-word-count{
+    top: auto;
+    align-items: flex-end;
+  }
+}
+
+.@{input-prefix-cls}-group{
+  .input-group(~'@{input-prefix-cls}');
+}
+
+.@{form-item-prefix-cls}-error{
+  .@{input-prefix-cls}{
+    .input-error;
+
+    &-icon{
+      color: @error-color;
+    }
+  }
+  .@{input-prefix-cls}-group{
+    .input-group-error;
+  }
+  .@{transfer-prefix-cls} {
+    .@{input-prefix-cls} {
+      .input;
+
+      &-icon{
+        color: @subsidiary-color;
+      }
+    }
+  }
+}
+.@{form-item-prefix-cls}-validating{
+  .@{input-prefix-cls}{
+    &-icon-validate{
+      display: inline-block;
+    }
+    &-icon + .@{input-prefix-cls}{
+      padding-right: 32px;
+    }
+  }
+}

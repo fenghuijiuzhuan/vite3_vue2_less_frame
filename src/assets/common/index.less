@@ -1,0 +1,49 @@
+/* stylelint-disable */
+@import url("./components/layout.less");
+@import url("./components/transition.less");
+@import url("./components/button-camp.less");
+@import url("./components/filter-core.less");
+@import url("./components/filter-wrap.less");
+@import url("./components//w-table.less");
+@import url("./components/dialog-wraper.less");
+@import url("./components/ask-dialog.less");
+@import url("./components/top-guide.less");
+@import url("./components/tags-view.less");
+@import url("./components/goods-header.less");
+@import url("./components/print.less");
+@import url("./components/page-detail-wrap.less");
+@import url("./components/dict-select.less");
+@import url("./components/deputy.less");
+@import url("./components/sh-panel.less");
+@import url("./components/title-line.less");
+@import url("./components/tableForm-formItem.less");
+@import url("./components/view-loading.less");
+@import url("./components/upload.less");
+@import url("./components/tab.less");
+@import url("./components/tree-select.less");
+
+:export {
+    shPagePadding: @sh-padding;
+    shPanelPadding: @sh-panel-padding;
+}
+
+.sh-panel ~ .sh-panel {
+    margin-top: @sh-padding;
+}
+
+.sh-pointer {
+    cursor: pointer;
+}
+
+.sh-form {
+    .ivu-form-item {
+        margin-bottom: 10px;
+    }
+}
+
+.sh-info__row {
+    .ivu-col {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}

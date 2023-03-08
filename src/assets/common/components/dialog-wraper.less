@@ -1,0 +1,45 @@
+.sh-dialog-wraper {
+    .ivu-modal-header {
+        padding: 0;
+        border: none;
+    }
+
+    .ivu-modal-body {
+        padding: 7px 20px;
+    }
+
+    .ivu-modal-footer {
+        padding: 0 20px 20px;
+        border: none;
+    }
+}
+
+.sh-dialog{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ivu-modal{
+        top: 0;
+
+        .ivu-modal-body {
+            max-height: 70vh;
+            overflow: auto;
+        }
+    }
+}
+
+.sh-dialog-wraper-header-default {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 46px;
+    padding: 0 16px 0 20px;
+    font-size: var(--sh-wms-title-font-size);
+    color: @title-color !important;
+    border-bottom: 1px solid @border-color-split;
+
+    img {
+        cursor: pointer;
+    }
+}

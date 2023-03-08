@@ -1,0 +1,44 @@
+.sh-ask-dialog {
+    &__header {
+        box-sizing: content-box;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: 40px;
+        padding: 14px 16px;
+        font-size: var(--sh-wms-title-font-size);
+        font-weight: bold;
+        line-height: 1.5;
+        color: @title-color;
+
+        img {
+            margin-right: 16px;
+        }
+
+        /* stylelint-disable-next-line block-no-empty */
+        &--title {
+        }
+    }
+
+    &__content {
+        padding: 0 10px 20px 35px;
+
+        &--row {
+            padding: 10px 0;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+
+        &--btn {
+            min-width: 84px;
+            margin-left: 10px;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

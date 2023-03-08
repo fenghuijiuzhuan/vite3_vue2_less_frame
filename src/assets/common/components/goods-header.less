@@ -1,0 +1,41 @@
+.sh-goods-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 46px;
+    padding: 0 16px;
+    background: @body-background;
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        content: "";
+        background-color: @border-color-base;
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+
+        span {
+            .ivu-icon {
+                margin-right: 4px;
+            }
+        }
+    }
+
+    &__close {
+        // width: 40px;
+        span {
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+@form-prefix-cls: ~"@{css-prefix}form";
+@form-item-prefix-cls: ~"@{form-prefix-cls}-item";
+
+.@{form-prefix-cls} {
+  .@{form-item-prefix-cls}-label {
+    box-sizing: border-box;
+    float: left;
+    padding: 10px 12px 10px 0;
+    font-size: @font-size-base;
+    line-height: 1;
+    color: @text-color;
+    text-align: right;
+    vertical-align: middle;
+  }
+  &-label-left .@{form-item-prefix-cls}-label {
+    text-align: left;
+  }
+  &-label-top .@{form-item-prefix-cls}-label {
+    display: inline-block;
+    float: none;
+    padding: 0 0 10px;
+  }
+
+  &-inline{
+    .@{form-item-prefix-cls} {
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: top;
+    }
+  }
+}
+
+.@{form-item-prefix-cls} {
+  margin-bottom: 20px;
+  vertical-align: top;
+  .clearfix();
+
+  &-content {
+    position: relative;
+    font-size: @font-size-base;
+    line-height: 32px;
+  }
+
+  & & {
+    margin-bottom: 0;
+  }
+
+  & & &-content {
+    margin-left: 0!important;
+  }
+
+  &-error-tip{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 4px;
+    font-size: 10px;
+    line-height: 1;
+    color: @error-color;
+  }
+
+  &-required {
+    .@{form-item-prefix-cls}-label:before {
+      display: inline-block;
+      margin-right: 4px;
+      font-family: SimSun;
+      font-size: @font-size-base;
+      line-height: 1;
+      color: @error-color;
+      content: '*';
+    }
+  }
+
+  &-error {
+    // todo
+  }
+}
+
+.@{form-prefix-cls}-hide-required-mark .@{form-item-prefix-cls}-required{
+  .@{form-item-prefix-cls}-label:before {
+    display: none;
+  }
+}

@@ -1,0 +1,74 @@
+.sh-filter-wrap {
+  &__top {
+    &--toggle {
+      width: auto !important;
+      height: auto !important;
+      font-size: var(--sh-wms-title-font-size) !important;
+      line-height: 1;
+      color: @primary-color !important;
+      cursor: pointer;
+
+      &.open {
+        bottom: 20px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 10px;
+
+    &--params {
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      align-items: center;
+      list-style: none;
+
+      & > li {
+        display: flex;
+        align-items: center;
+        width: initial;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+        p {
+          flex: none;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    &--btns {
+      padding-left: 20px;
+    }
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    // padding-top: 10px;
+    // &--left {
+    //     display: flex;
+    //     align-items: center;
+    //     &-item {
+    //         margin-right: 10px;
+    //     }
+    // }
+    // &--right {
+    //     display: flex;
+    //     align-items: center;
+    //     &-item {
+    //         margin-left: 10px;
+    //     }
+    // }
+  }
+
+  .ivu-form {
+    width: 100%;
+
+    .ivu-form-item {
+      margin-bottom: 10px;
+    }
+  }
+}

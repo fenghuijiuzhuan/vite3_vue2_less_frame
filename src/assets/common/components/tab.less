@@ -1,0 +1,19 @@
+.sh-tab {
+    display: flex;
+    align-items: center;
+
+    &__item {
+        padding: 5px;
+        margin-right: 40px;
+        line-height: 1.5;
+        cursor: pointer;
+        border: 0 solid transparent;
+        border-width: 0 0 3px;
+        transition: 0.3s;
+    }
+
+    &__active {
+        cursor: default;
+        border-color: @primary-color;
+    }
+}

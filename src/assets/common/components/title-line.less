@@ -1,0 +1,37 @@
+.sh-title-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__text {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    width: 100%;
+    font-size: var(--sh-wms-title-font-size);
+
+    &--content {
+      margin-right: 16px;
+    }
+
+    &--note {
+      font-size: var(--sh-wms-title-font-size);
+      font-weight: normal;
+      color: @text-color;
+
+      > p {
+        display: inherit;
+        margin-top: 10px;
+        font: inherit;
+        color: inherit;
+      }
+    }
+  }
+
+  &__controls {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    // flex-direction: row-reverse;
+  }
+}
